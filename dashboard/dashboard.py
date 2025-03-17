@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 st.title("Dashboard Tren Polusi dan Cuaca di Stasiun Dongsi")
 
-dongsi = pd.read_csv("dongsi.csv")
+path = "dashboard/dongsi.csv"
+dongsi = pd.read_csv(path)
 dongsi["date"] = pd.to_datetime(dongsi["date"], errors='coerce')
 dongsi = dongsi.dropna(subset=["date"])
 
