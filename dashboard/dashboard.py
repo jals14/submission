@@ -27,7 +27,7 @@ else:
         polution = ["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]
         weather = ["TEMP", "PRES", "DEWP", "RAIN", "WSPM"]
 
-        filtered_data["date_group"] = filtered_data["date"].dt.to_period("M")
+        filtered_data["date_group"] = filtered_data["date"].dt.to_period("D")
 
         if category == "Polusi":
             selected_data = filtered_data.groupby("date_group")[polution].mean().reset_index()
